@@ -93,7 +93,7 @@ window.MINI_EXAMS = {
           {
             id: "m01-4-1", label: "(1)", points: 10, type: "numeric",
             stem: "数字 $1,2,3,4,5$ から異なる4個を使って4桁の偶数を作る。できる数は何個あるか。",
-            prompts: ["個数"], answers: ["24"],
+            prompts: ["個数"], answers: ["48"],
             solution: "一の位は2または4の2通り。一の位を決めた後、千・百・十の位は残った4個から順に選ぶので $2\\cdot4\\cdot3\\cdot2=48$ 通り。"
           },
           {
