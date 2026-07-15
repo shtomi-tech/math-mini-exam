@@ -15,13 +15,13 @@ window.MINI_EXAMS = {
           {
             id: "m01-1-1", label: "(1)", points: 12, type: "numeric",
             stem: "次の式を $x$ について整理したとき、$x^2$、$x$、定数項の係数をそれぞれ答えよ。\\[ (2x-3)^2-(x+1)(x-1) \\]",
-            prompts: ["$x^2$ の係数", "$x$ の係数", "定数項"], answers: ["3", "-12", "10"],
+            prompts: ["二次の係数", "一次の係数", "定数項"], answers: ["3", "-12", "10"],
             solution: "$(2x-3)^2-(x+1)(x-1)=4x^2-12x+9-(x^2-1)=3x^2-12x+10$。"
           },
           {
             id: "m01-1-2", label: "(2)", points: 8, type: "numeric",
-            stem: "$x^2+5xy+6y^2$ を因数分解すると $(x+ay)(x+by)$ となる。$a<b$ のとき、$a$ と $b$ を答えよ。",
-            prompts: ["$a$", "$b$"], answers: ["2", "3"],
+            stem: "$x^2+5xy+6y^2$ を因数分解すると $(x+ay)(x+by)$ となる。$a\\lt b$ のとき、$a$ と $b$ を答えよ。",
+            prompts: ["小さい方", "大きい方"], answers: ["2", "3"],
             solution: "$2+3=5$、$2\\cdot3=6$ なので $(x+2y)(x+3y)$。"
           },
           {
@@ -40,8 +40,8 @@ window.MINI_EXAMS = {
         questions: [
           {
             id: "m01-2-1", label: "(1)", points: 8, type: "numeric",
-            stem: "$\\sqrt{72}-\\sqrt{18}=a\\sqrt{2}$ と表せるとき、$a$ を答えよ。",
-            prompts: ["$a$"], answers: ["3"],
+            stem: "$\\sqrt{72}-\\sqrt{18}=a\\sqrt{2}$ と表せるとき、係数を答えよ。",
+            prompts: ["係数"], answers: ["3"],
             solution: "$\\sqrt{72}=6\\sqrt2$、$\\sqrt{18}=3\\sqrt2$ より、差は $3\\sqrt2$。"
           },
           {
@@ -52,8 +52,8 @@ window.MINI_EXAMS = {
           },
           {
             id: "m01-2-3", label: "(3)", points: 8, type: "numeric",
-            stem: "$3(x-2)<2x+5$ の解を $x<c$ と表すとき、$c$ を答えよ。",
-            prompts: ["$c$"], answers: ["11"],
+            stem: "$3(x-2)<2x+5$ の解を $x\\lt c$ と表すとき、境界値を答えよ。",
+            prompts: ["境界値"], answers: ["11"],
             solution: "$3x-6<2x+5$ より $x<11$。"
           }
         ]

@@ -267,6 +267,21 @@
     renderResult(auto);
   }
 
+  function resetAttempt() {
+    if (!state || state.status !== "active") return;
+    if (!window.confirm("試験を中断して、回答とタイマーをリセットしますか？")) return;
+    clearInterval(timerId);
+    localStorage.removeItem(STORAGE_KEY);
+    state = null;
+    activeInput = null;
+    $("#exam").classList.add("hidden");
+    $("#result").classList.add("hidden");
+    $("#intro").classList.remove("hidden");
+    document.body.classList.remove("result-mode");
+    updateMode("開始前");
+    renderIntro();
+  }
+
   function displayAnswer(q) {
     const value = state.answers[q.id];
     if (q.type === "numeric") return Array.isArray(value) ? value.map((entry) => entry || "—").join(" / ") : "—";
@@ -297,6 +312,7 @@
   }
 
   $("#startBtn").addEventListener("click", begin);
+  $("#resetBtn").addEventListener("click", resetAttempt);
   $("#submitBtn").addEventListener("click", openSubmitDialog);
   $("#cancelSubmit").addEventListener("click", () => $("#submitDialog").classList.add("hidden"));
   $("#confirmSubmit").addEventListener("click", () => submit(false));
