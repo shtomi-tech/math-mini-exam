@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>数学ミニ試験</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+  <link rel="stylesheet" href="./static/styles.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+  <script defer src="./static/data.js"></script>
+  <script defer src="./static/app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">MATH / MINI EXAM</p>
+      <h1>数学ミニ試験</h1>
+    </div>
+    <div class="top-actions">
+      <span id="modeLabel" class="mode-label">開始前</span>
+      <button id="printBtn" class="ghost" type="button">問題を印刷</button>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section id="intro" class="panel intro-panel">
+      <p class="eyebrow">30 MINUTES / 100 POINTS</p>
+      <h2 id="examTitle"></h2>
+      <p id="examNote" class="lead"></p>
+      <div class="intro-grid">
+        <div><span class="label">制限時間</span><strong>30分</strong></div>
+        <div><span class="label">構成</span><strong>4単元・12小問</strong></div>
+        <div><span class="label">保存</span><strong>この端末のみ</strong></div>
+      </div>
+      <label class="name-field">氏名（任意）<input id="studentName" type="text" maxlength="40" placeholder="ゲスト"></label>
+      <ul class="rules">
+        <li>試験中は正誤・解説・ヒントを表示しません。</li>
+        <li>回答は自動保存されます。30分経過時は自動提出します。</li>
+        <li>提出後に正答と解説を確認できます。</li>
+      </ul>
+      <button id="startBtn" class="cta" type="button">試験を開始する</button>
+      <p id="resumeHint" class="hint"></p>
+    </section>
+
+    <section id="exam" class="hidden">
+      <div class="exam-toolbar panel">
+        <div><span class="label">残り時間</span><strong id="timer">30:00</strong></div>
+        <div><span class="label">回答済み</span><strong id="answeredCount">0 / 12</strong></div>
+        <button id="submitBtn" class="cta" type="button">提出する</button>
+      </div>
+      <div id="examSheet"></div>
+    </section>
+
+    <section id="result" class="hidden">
+      <div class="panel result-hero">
+        <p class="eyebrow">RESULT</p>
+        <h2>採点結果</h2>
+        <div class="result-score"><strong id="score"></strong><span>/ 100点</span></div>
+        <p id="resultSummary" class="lead"></p>
+        <button id="retryBtn" class="ghost" type="button">もう一度受験する</button>
+      </div>
+      <div id="resultSheet"></div>
+    </section>
+  </main>
+
+  <div id="submitDialog" class="dialog hidden" role="dialog" aria-modal="true" aria-labelledby="dialogTitle">
+    <div class="dialog-box">
+      <h2 id="dialogTitle">提出しますか？</h2>
+      <p id="dialogText"></p>
+      <div class="dialog-actions"><button id="cancelSubmit" class="ghost" type="button">戻る</button><button id="confirmSubmit" class="cta" type="button">提出する</button></div>
+    </div>
+  </div>
+</body>
+</html>
