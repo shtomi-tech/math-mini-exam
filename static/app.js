@@ -1,9 +1,12 @@
 (() => {
   "use strict";
 
-  const EXAM = window.MINI_EXAMS.mini_01;
-  const STORAGE_KEY = "math-mini-exam:mini_01:active";
-  const RESULT_KEY = "math-mini-exam:mini_01:last-result";
+  const EXAM_PARAM = new URLSearchParams(window.location.search).get("exam") || "mini_01";
+  const EXAM = window.MINI_EXAMS[EXAM_PARAM] || window.MINI_EXAMS.mini_01;
+  const STORAGE_KEY = `math-mini-exam:${EXAM.id}:active`;
+  const RESULT_KEY = `math-mini-exam:${EXAM.id}:last-result`;
+  // 第1回は従来のクラウド保存先（appId）を維持し、既存の生徒進捗と互換を保つ
+  const CLOUD_APP_ID = EXAM.id === "mini_01" ? "math-mini-exam" : `math-mini-exam:${EXAM.id}`;
   const TOTAL_SECONDS = EXAM.durationMinutes * 60;
   let state = null;
   let timerId = null;
@@ -373,7 +376,7 @@
 
   async function init() {
     cloud = createCloud({
-      appId: "math-mini-exam",
+      appId: CLOUD_APP_ID,
       getPayload: cloudPayload,
       applyLoaded: applyCloudPayload,
     });

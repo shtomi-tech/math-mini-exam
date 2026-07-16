@@ -114,5 +114,121 @@ window.MINI_EXAMS = {
         ]
       }
     ]
+  },
+  "mini_02": {
+    id: "mini_02",
+    title: "基礎ミックス 第2回",
+    seriesTotal: 6,
+    seriesNumber: 2,
+    units: ["式の展開・因数分解", "実数・1次不等式", "集合と論理", "場合の数"],
+    durationMinutes: 30,
+    totalPoints: 100,
+    note: "4単元を組み合わせたオリジナル問題です。",
+    groups: [
+      {
+        number: "1",
+        title: "式の展開・因数分解",
+        tag: "ALGEBRA",
+        points: 25,
+        questions: [
+          {
+            id: "m02-1-1", label: "(1)", points: 12, type: "numeric",
+            stem: "次の式を $x$ について整理したとき、$x^2$、$x$、定数項の係数をそれぞれ答えよ。\\[ (x+2)(x-5)+(x+3)^2 \\]",
+            prompts: ["二次の係数", "一次の係数", "定数項"], answers: ["2", "3", "-1"],
+            solution: "$(x+2)(x-5)+(x+3)^2=x^2-3x-10+x^2+6x+9=2x^2+3x-1$。"
+          },
+          {
+            id: "m02-1-2", label: "(2)", points: 8, type: "numeric",
+            stem: "$2x^2+7x+3$ を因数分解すると $(2x+a)(x+b)$ となる。$a$ と $b$ を答えよ。",
+            prompts: ["$a$", "$b$"], answers: ["1", "3"],
+            solution: "たすき掛けで $2\\cdot3+1\\cdot1=7$ が合うので $(2x+1)(x+3)$。展開して確認すると $2x^2+7x+3$。"
+          },
+          {
+            id: "m02-1-3", label: "(3)", points: 5, type: "numeric",
+            stem: "$x+y=5$、$xy=3$ のとき、$x^2+y^2$ の値を答えよ。",
+            prompts: ["$x^2+y^2$"], answers: ["19"],
+            solution: "$x^2+y^2=(x+y)^2-2xy=25-6=19$。"
+          }
+        ]
+      },
+      {
+        number: "2",
+        title: "実数・1次不等式",
+        tag: "REAL / INEQUALITY",
+        points: 25,
+        questions: [
+          {
+            id: "m02-2-1", label: "(1)", points: 8, type: "numeric",
+            stem: "$\\dfrac{1}{\\sqrt{5}-2}$ を有理化すると $a+\\sqrt{b}$（$a,b$ は自然数）の形になる。$a$ と $b$ を答えよ。",
+            prompts: ["$a$", "$b$"], answers: ["2", "5"],
+            solution: "分母分子に $\\sqrt5+2$ を掛けると、分母は $5-4=1$。よって $\\sqrt5+2=2+\\sqrt5$。"
+          },
+          {
+            id: "m02-2-2", label: "(2)", points: 9, type: "choice",
+            stem: "$|x-3|>2$ を満たす $x$ の範囲として正しいものを選べ。",
+            options: ["$1\\lt x\\lt5$", "$x\\lt1$ または $x\\gt5$", "$x\\gt5$", "$x\\lt-1$ または $x\\gt5$"], answer: 1,
+            solution: "$x-3>2$ または $x-3<-2$ より、$x>5$ または $x<1$。不等号の向きが $>$ なので範囲は外側になる。"
+          },
+          {
+            id: "m02-2-3", label: "(3)", points: 8, type: "numeric",
+            stem: "連立不等式 $\\begin{cases} 2x+1>x-3 \\\\ 5-x\\ge2x-4 \\end{cases}$ を満たす整数 $x$ は何個あるか。",
+            prompts: ["個数"], answers: ["7"],
+            solution: "1つ目から $x>-4$、2つ目から $9\\ge3x$ すなわち $x\\le3$。よって $-4<x\\le3$ で、整数は $-3$ から $3$ の7個。"
+          }
+        ]
+      },
+      {
+        number: "3",
+        title: "集合と論理",
+        tag: "SETS / LOGIC",
+        points: 20,
+        questions: [
+          {
+            id: "m02-3-1", label: "(1)", points: 8, type: "numeric",
+            stem: "$1$ から $100$ までの自然数のうち、$4$ の倍数でも $6$ の倍数でもないものは何個あるか。",
+            prompts: ["個数"], answers: ["67"],
+            solution: "4の倍数は25個、6の倍数は16個、共通（12の倍数）は8個。和集合は $25+16-8=33$ 個なので、$100-33=67$ 個。"
+          },
+          {
+            id: "m02-3-2", label: "(2)", points: 8, type: "multi",
+            stem: "$U=\\{1,2,\\ldots,8\\}$ を全体集合とし、$A=\\{1,2,3,4\\}$、$B=\\{3,4,5,6\\}$ とする。正しい記述をすべて選べ。",
+            options: ["$\\overline{A}=\\{5,6,7,8\\}$", "$A\\cap B=\\{3,4\\}$", "$\\overline{A}\\cap\\overline{B}=\\{7,8\\}$", "$A\\cup B=U$"], answer: [0, 1, 2],
+            solution: "$\\overline A=\\{5,6,7,8\\}$、$A\\cap B=\\{3,4\\}$。$A\\cup B=\\{1,\\ldots,6\\}$ なので $\\overline{A}\\cap\\overline{B}=\\overline{A\\cup B}=\\{7,8\\}$。$7,8$ が入らないため $A\\cup B=U$ は誤り。"
+          },
+          {
+            id: "m02-3-3", label: "(3)", points: 4, type: "choice",
+            stem: "命題「$x=2$ ならば $x^2=4$」と、その逆の真偽の組合せとして正しいものを選べ。",
+            options: ["もとの命題も逆も真", "もとの命題は真、逆は偽", "もとの命題は偽、逆は真", "もとの命題も逆も偽"], answer: 1,
+            solution: "もとの命題は真。逆「$x^2=4$ ならば $x=2$」は $x=-2$ が反例となり偽。"
+          }
+        ]
+      },
+      {
+        number: "4",
+        title: "場合の数",
+        tag: "COUNTING",
+        points: 30,
+        questions: [
+          {
+            id: "m02-4-1", label: "(1)", points: 10, type: "numeric",
+            stem: "大人2人と子ども3人の計5人が一列に並ぶ。両端が大人になる並び方は何通りあるか。",
+            prompts: ["通り"], answers: ["12"],
+            solution: "両端の大人の並び方が $2!=2$ 通り、間の子ども3人の並び方が $3!=6$ 通り。積の法則で $2\\cdot6=12$ 通り。"
+          },
+          {
+            id: "m02-4-2", label: "(2)", points: 10, type: "numeric",
+            stem: "男子6人、女子4人の中から4人を選ぶ。女子がちょうど2人含まれる選び方は何通りあるか。",
+            prompts: ["通り"], answers: ["90"],
+            solution: "女子の選び方 $\\binom42=6$ 通り、男子の選び方 $\\binom62=15$ 通り。積の法則で $6\\cdot15=90$ 通り。"
+          },
+          {
+            id: "m02-4-3", label: "(3)", points: 10, type: "numeric",
+            stem: "$72$ の正の約数は全部で何個あるか。",
+            prompts: ["個数"], answers: ["12"],
+            solution: "$72=2^3\\cdot3^2$ なので、約数の個数は $(3+1)(2+1)=12$ 個。"
+          }
+        ]
+      }
+    ]
   }
 };
