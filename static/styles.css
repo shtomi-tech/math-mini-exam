@@ -23,7 +23,7 @@ h2 { margin-bottom: 8px; font-size: clamp(20px, 3vw, 28px); line-height: 1.25; }
 .eyebrow { margin-bottom: 4px; color: var(--muted); }
 .top-actions { display: flex; align-items: center; gap: 12px; }
 .mode-label { white-space: nowrap; }
-.contextbar { width: min(1100px, 90vw); margin: 16px auto 0; }
+.contextbar { width: min(760px, 90vw); margin: 16px auto 0; }
 .context-exam-card { display: flex; flex-direction: column; padding: 10px 14px; border: 1px solid var(--line); }
 .context-exam-card > strong { font-size: 16px; }
 .context-exam-card > span:last-of-type { color: var(--muted); font-size: 12px; }
@@ -105,7 +105,7 @@ button:focus-visible, input:focus-visible, summary:focus-visible { outline: 3px 
   .topbar { align-items: flex-start; flex-direction: column; gap: 12px; }
   .top-actions { width: 100%; justify-content: space-between; }
   .shell { width: min(94vw, 1100px); margin-top: 20px; }
-  .contextbar { width: min(94vw, 1100px); }
+  .contextbar { width: min(760px, 94vw); }
   .intro-panel, .exam-group, .result-group { padding: 16px; }
   .intro-grid { grid-template-columns: 1fr; }
   .intro-grid > div { border-right: 0; border-bottom: 1px solid var(--line); }
