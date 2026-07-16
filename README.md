@@ -24,4 +24,4 @@ py -m http.server 8000
 
 ## 問題の追加
 
-`static/data.js` の `groups` に問題を追加します。`numeric`、`choice`、`multi` の3形式に対応しています。各回の合計点が100点、想定時間が30分になるよう調整してください。
+問題を作る前に、`docs/problem-source-map.md` で参考資料の問題番号と独自化方針を割り当てます。その後、`static/data.js` の `groups` に問題を追加します。`numeric`、`choice`、`multi` の3形式に対応しています。各回の合計点が100点、想定時間が30分になるよう調整してください。

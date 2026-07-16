@@ -133,15 +133,15 @@ window.MINI_EXAMS = {
         questions: [
           {
             id: "m02-1-1", label: "(1)", points: 12, type: "numeric",
-            stem: "次の式を $x$ について整理したとき、$x^2$、$x$、定数項の係数をそれぞれ答えよ。\\[ (x+2)(x-5)+(x+3)^2 \\]",
-            prompts: ["二次の係数", "一次の係数", "定数項"], answers: ["2", "3", "-1"],
-            solution: "$(x+2)(x-5)+(x+3)^2=x^2-3x-10+x^2+6x+9=2x^2+3x-1$。"
+            stem: "$A=2x^2-3x+4$、$B=x^2+2x-1$ とする。$A+kB$ の $x$ の係数が $1$ になるとき、$k$ の値を求めよ。さらに、このときの $x^2$ の係数と定数項を答えよ。",
+            prompts: ["$k$", "二次の係数", "定数項"], answers: ["2", "4", "2"],
+            solution: "$A+kB=(2+k)x^2+(-3+2k)x+(4-k)$。$x$ の係数について $-3+2k=1$ より $k=2$。したがって $A+2B=4x^2+x+2$ なので、$x^2$ の係数は $4$、定数項は $2$。"
           },
           {
-            id: "m02-1-2", label: "(2)", points: 8, type: "numeric",
-            stem: "$2x^2+7x+3$ を因数分解すると $(2x+a)(x+b)$ となる。$a$ と $b$ を答えよ。",
-            prompts: ["$a$", "$b$"], answers: ["1", "3"],
-            solution: "たすき掛けで $2\\cdot3+1\\cdot1=7$ が合うので $(2x+1)(x+3)$。展開して確認すると $2x^2+7x+3$。"
+            id: "m02-1-2", label: "(2)", points: 8, type: "choice",
+            stem: "$6a^2b-9ab^2$ を因数分解した式として正しいものを選べ。",
+            options: ["$3ab(2a-3b)$", "$3ab(2a+3b)$", "$3ab(3a-2b)$", "$ab(6a-3b)$"], answer: 0,
+            solution: "2項の共通因数は $3ab$ である。$6a^2b\\div3ab=2a$、$-9ab^2\\div3ab=-3b$ より、$6a^2b-9ab^2=3ab(2a-3b)$。"
           },
           {
             id: "m02-1-3", label: "(3)", points: 5, type: "numeric",

@@ -1,2 +1,6 @@
 # デプロイ時にSecretsから生成する実行時設定
 static/config.json
+
+# 参考教材PDFとPDF確認用の一時画像は公開しない
+data/
+tmp/
