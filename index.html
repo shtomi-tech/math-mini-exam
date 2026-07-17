@@ -3,95 +3,32 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>数学ミニ試験</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
-  <link rel="stylesheet" href="./static/styles.css">
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
-  <script defer src="./static/data.js"></script>
-  <script defer src="./static/vendor/harness/cloud.js?v=0.1.0"></script>
-  <script defer src="./static/app.js?v=20260716-inline-switcher"></script>
+  <title>数学ミニ試験（移転しました）</title>
+  <style>
+    body { margin: 0; display: grid; place-items: center; min-height: 100vh; background: #faf9f6; color: #141413; font-family: "Segoe UI", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif; }
+    .card { max-width: 560px; padding: 32px; border: 1px solid #141413; text-align: center; }
+    a { color: #b5532e; font-weight: 700; }
+  </style>
+  <script>
+    // 数学ミニ試験は math-practice（数学演習）へ統合されました。
+    // 生徒別共有URLのパラメータ（s / t）と回の指定（exam）をそのまま引き継いで転送する。
+    (() => {
+      const params = new URLSearchParams(window.location.search);
+      if (!params.get("exam")) params.set("exam", "mini_01");
+      const target = "https://shtomi-tech.github.io/teikyo-math-practice/?" + params.toString();
+      document.addEventListener("DOMContentLoaded", () => {
+        const link = document.getElementById("targetLink");
+        link.href = target;
+      });
+      window.location.replace(target);
+    })();
+  </script>
 </head>
 <body>
-  <header class="topbar">
-    <div>
-      <p class="eyebrow">MATH / MINI EXAM</p>
-      <h1>数学ミニ試験</h1>
-    </div>
-    <div class="top-actions">
-      <span id="modeLabel" class="mode-label">開始前</span>
-      <button id="printBtn" class="ghost" type="button">問題を印刷</button>
-    </div>
-  </header>
-
-  <div class="contextbar" aria-label="試験の選択">
-    <section class="context-exam-card">
-      <span class="eyebrow">EXAM</span>
-      <strong id="contextExamTitle"></strong>
-      <span id="contextExamText"></span>
-      <details class="exam-switch-toggle">
-        <summary>回を変える</summary>
-        <div id="examSwitch" class="exam-switch" role="tablist" aria-label="受験する回を選択"></div>
-      </details>
-    </section>
-  </div>
-
-  <main class="shell">
-    <section id="intro" class="panel intro-panel">
-      <p class="eyebrow">30 MINUTES / 100 POINTS</p>
-      <h2 id="examTitle"></h2>
-      <p id="examNote" class="lead"></p>
-      <section class="scope-panel" aria-label="試験の前提情報">
-        <div><span class="label">シリーズ</span><strong id="seriesInfo"></strong></div>
-        <div><span class="label">対象単元</span><p id="unitList"></p></div>
-      </section>
-      <div class="intro-grid">
-        <div><span class="label">制限時間</span><strong>30分</strong></div>
-        <div><span class="label">構成</span><strong>4単元・12小問</strong></div>
-        <div><span class="label">保存</span><strong id="saveMode">この端末のみ</strong></div>
-      </div>
-      <label class="name-field">氏名（任意）<input id="studentName" type="text" maxlength="40" placeholder="ゲスト"></label>
-      <ul class="rules">
-        <li>試験中は正誤・解説・ヒントを表示しません。</li>
-        <li>回答は自動保存されます。30分経過時は自動提出します。</li>
-        <li>提出後に正答と解説を確認できます。</li>
-      </ul>
-      <button id="startBtn" class="cta" type="button">試験を開始する</button>
-      <p id="resumeHint" class="hint"></p>
-    </section>
-
-    <section id="exam" class="hidden">
-      <div class="exam-toolbar panel">
-        <div><span class="label">残り時間</span><strong id="timer">30:00</strong></div>
-        <div><span class="label">回答済み</span><strong id="answeredCount">0 / 12</strong></div>
-        <div class="exam-actions"><button id="resetBtn" class="ghost danger-button" type="button">中断してリセット</button><button id="submitBtn" class="cta" type="button">提出する</button></div>
-      </div>
-      <section class="keypad-panel panel" aria-label="マウス入力">
-        <div><p class="eyebrow">INPUT</p><h2>クリック入力</h2></div>
-        <div id="activeLabel" class="hint">数字欄を選択してください</div>
-        <div id="keypad" class="keypad"></div>
-      </section>
-      <div id="examSheet"></div>
-    </section>
-
-    <section id="result" class="hidden">
-      <div class="panel result-hero">
-        <p class="eyebrow">RESULT</p>
-        <h2>採点結果</h2>
-        <div class="result-score"><strong id="score"></strong><span>/ 100点</span></div>
-        <p id="resultSummary" class="lead"></p>
-        <button id="retryBtn" class="ghost" type="button">もう一度受験する</button>
-      </div>
-      <div id="resultSheet"></div>
-    </section>
-  </main>
-
-  <div id="submitDialog" class="dialog hidden" role="dialog" aria-modal="true" aria-labelledby="dialogTitle">
-    <div class="dialog-box">
-      <h2 id="dialogTitle">提出しますか？</h2>
-      <p id="dialogText"></p>
-      <div class="dialog-actions"><button id="cancelSubmit" class="ghost" type="button">戻る</button><button id="confirmSubmit" class="cta" type="button">提出する</button></div>
-    </div>
+  <div class="card">
+    <h1>数学ミニ試験は移転しました</h1>
+    <p>「数学演習」アプリに統合されました。自動的に移動しない場合は、次のリンクを開いてください。</p>
+    <p><a id="targetLink" href="https://shtomi-tech.github.io/teikyo-math-practice/?exam=mini_01">数学演習（統合版）を開く</a></p>
   </div>
 </body>
 </html>
