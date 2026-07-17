@@ -15,7 +15,7 @@
     (() => {
       const params = new URLSearchParams(window.location.search);
       if (!params.get("exam")) params.set("exam", "mini_01");
-      const target = "https://shtomi-tech.github.io/teikyo-math-practice/?" + params.toString();
+      const target = "https://shtomi-tech.github.io/math-practice/?" + params.toString();
       document.addEventListener("DOMContentLoaded", () => {
         const link = document.getElementById("targetLink");
         link.href = target;
@@ -28,7 +28,7 @@
   <div class="card">
     <h1>数学ミニ試験は移転しました</h1>
     <p>「数学演習」アプリに統合されました。自動的に移動しない場合は、次のリンクを開いてください。</p>
-    <p><a id="targetLink" href="https://shtomi-tech.github.io/teikyo-math-practice/?exam=mini_01">数学演習（統合版）を開く</a></p>
+    <p><a id="targetLink" href="https://shtomi-tech.github.io/math-practice/?exam=mini_01">数学演習（統合版）を開く</a></p>
   </div>
 </body>
 </html>
